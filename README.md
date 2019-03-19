@@ -8,7 +8,7 @@ Firstly, Mostafazadeh et al. (2016) proposed ROCStories dataset, which is a coll
 
 Based on ROCStories, Mostafazadeh et al. (2016) also introduced SCT evaluation framework and built development set and test set to address the lack of evaluation framework and datasets on which story comprehension model can be trained and tested. Dev set and test set were crowd-sourced by producing two related endings for the plot. In other words, every plot has two endings, and label is the index of the more appropriate ending.
 
-Recently, many works proposed a problem: SCT may be an easier task than identifying whether a given ending is coherent or not. Also, they (Cai et al. 2017; Srinivasan et al. 2018) got roughly the same accuracy by only using the endings to do 0-1 classification. To address this issue, Sharma et al. proposed SCTv1.5 which have the following new characters to shed human-authorship biases:
+Recently, many works proposed a problem: SCT may be an easier task than identifying whether a given ending is coherent or not. Also, they (Cai et al. 2017; Srinivasan et al. 2018) got roughly the same accuracy by only using the endings to do a binary classification. To address this issue, Sharma et al. proposed SCTv1.5 which have the following new characters to shed human-authorship biases:
 
 **The goal of SCTv1.5**
 * The new endings ['right' or 'wrong'] should
@@ -28,3 +28,11 @@ Recently, many works proposed a problem: SCT may be an easier task than identify
     * should make sense standalone;
     * can not differ in the number of words from original sentence by more than three words;
     * can not use 'not' in front of a description or a verb.
+
+# Previous Approaches
+
+**Feature-based approach**
+
+
+
+**Neural network approach**
