@@ -23,7 +23,7 @@ The below pic is some examples from ROCStories crowd-sourcing:
     <img src="./images/ROCStories.png" height="75%" width="75%" />
 </div>
 
-There are two main tasks about ROCStories: *1, story cloze test (SCT); 2, story generation; 3, knowledge extraction and narrative structure learning.* We focus on the first one and will research on the next two. 
+There are three main tasks about ROCStories: *1, story cloze test (SCT); 2, story generation; 3, knowledge extraction and narrative structure learning.* We focus on the first one and will research on the next two. 
 
 Based on ROCStories, Mostafazadeh et al. (2016) also introduced **SCT** evaluation framework and built development set and test set to address the lack of evaluation framework and datasets on which story comprehension model can be trained and tested. Dev set and test set were crowd-sourced by producing two related endings for the plot. In other words, every plot has two endings, and label is the index of the more appropriate ending.
 
