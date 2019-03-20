@@ -2,6 +2,8 @@
 
 Analysis on ROCStories and related SCT task with its history, developments and future works. We focus on the crowd-sourcing details, previous frameworks and unsolved problems.
 
+Contributed by Yuqiang Xie, National Engineering Laboratory for Information Security Technologies, IIE, CAS.
+
 ## Introduction
 
 Firstly, Mostafazadeh et al. (2016) proposed ROCStories dataset, which is a collection of crowd-sourced complete five sentence stories through Amazon MTurk. With a theme, each Story follows a character through a fairly simple series of events to a conclusion. We usually call the first four sentences 'plot', and the last one 'ending'. The prompt to the crowd-sourcing is the following points:
@@ -15,7 +17,13 @@ Imagine that you want to tell a five-sentence story to your friend. It can be ab
 
 * Each sentence in your story should be logically related to the next sentence and be about the characters of the story.
 
-There are two main tasks about ROCStories: *1, story cloze test (SCT); 2, story generation; 3, knowledge extraction and narrative structure learning.* We focus on the first one and will research on the next two.
+The below pic is some examples from ROCStories crowd-sourcing:
+
+<div align=center>
+    <img src="./images/ROCStories.png" height="75%" width="75%" />
+</div>
+
+There are two main tasks about ROCStories: *1, story cloze test (SCT); 2, story generation; 3, knowledge extraction and narrative structure learning.* We focus on the first one and will research on the next two. 
 
 Based on ROCStories, Mostafazadeh et al. (2016) also introduced **SCT** evaluation framework and built development set and test set to address the lack of evaluation framework and datasets on which story comprehension model can be trained and tested. Dev set and test set were crowd-sourced by producing two related endings for the plot. In other words, every plot has two endings, and label is the index of the more appropriate ending.
 
@@ -30,6 +38,12 @@ You are given a sequence of four sentences, which together form a coherent four-
 * All endings should follow up the story by sharing at least one of the characters of the story.
 
 * All endings should be meaningful and realistic when you read it on its own.
+
+The below pic is some examples from SCTv1.0 crowd-sourcing:
+
+<div align=center>
+    <img src="./images/SCT.png" height="75%" width="75%" />
+</div>
 
 Recently, many works proposed a problem: SCTv1.0 may be an easier task than identifying whether a given ending is coherent or not. Also, they (Cai et al. 2017; Srinivasan et al. 2018) got roughly the same accuracy by only using the endings to do a binary classification. Maybe, the prompt of SCTv1.0 has some problems. To address this issue, Sharma et al. proposed SCTv1.5 which have the following new characters to shed human-authorship biases:
 
@@ -54,6 +68,12 @@ Recently, many works proposed a problem: SCTv1.0 may be an easier task than iden
     * can not differ in the number of words from original sentence by more than three words;
     * can not use 'not' in front of a description or a verb.
 
+The below is some examples from SCTv1.5 dev set:
+
+1. Rick grew up in a troubled household.,"He never found good support in family, and turned to gangs.",It wasn't long before Rick got shot in a robbery.,The incident caused him to turn a new leaf.,He is happy now.,He joined a gang.,1
+2. Laverne needs to prepare something for her friend's party.,She decides to bake a batch of brownies.,She chooses a recipe and follows it closely.,Laverne tests one of the brownies to make sure it is delicious.,The brownies are so delicious Laverne eats two of them.,Laverne doesn't go to her friend's party.,1
+3. Sarah had been dreaming of visiting Europe for years.,She had finally saved enough for the trip.,She landed in Spain and traveled east across the continent.,She didn't like how different everything was.,Sarah then decided to move to Europe.,Sarah decided that she preferred her home over Europe.,2
+
 With the development on SCTv1.5, we can see the biases in the endings would be reduced to some degree. The following is the analysis on standard deviation of the word and character n-gram counts, as well as the part of speech (POS) counts, between the right and wrong endings:
 
 
@@ -71,14 +91,14 @@ Focus on neural network models which had been proved more powerful than classica
 
 |Model| Time | Org. | Feature| ROCStories |Commonsense|SCTv1.0 | SCTv1.5 | 
 | :--- | :---: | :------ | :-----: | :-----: | :-----: | :-----: |:-----: |
-|  DSSM | 2013  | MSR  |  No |  Yes | No | 58.5% | -  | 
-|  msap |  2017 | UW  |  Yes |  Yes | No |  75.2% |   |
-|  cogcomp |  2017 |  UI |  Yes |  Yes | No | 77.6%  | 60.8%  |
-|  val-NC-skip|  2018 |  GIT |  Yes | No | No  |  76.5% |   |
-|  EndingReg | 2018  | UR | Yes  |  Yes | No | 71.5%  |  64.4% |
-|  GPT |  2018 |  OpenAI |  No |  No |  No |  86.5% | - |
-|  GPT+ConceptNet |  2018 |  ZU |  No | Yes |  Yes |  87.6% | - |
-|  GPT+GRS |  2018 |  CMU |  No | No  |  No |  88.3% | - |
+|  [DSSM](#DSSM) | 2013  | MSR  |  No |  Yes | No | 58.5% | -  | 
+|  [msap](#msap) |  2017 | UW  |  Yes |  Yes | No |  75.2% |   |
+|  [cogcomp](#cogcomp) |  2017 |  UI |  Yes |  Yes | No | 77.6%  | 60.8%  |
+|  [val-NC-skip](#val-NC-skip)|  2018 |  GIT |  Yes | No | No  |  76.5% |   |
+|  [EndingReg](#EndingReg) | 2018  | UR | Yes  |  Yes | No | 71.5%  |  64.4% |
+|  [GPT](GPT) |  2018 |  OpenAI |  No |  No |  No |  86.5% | - |
+|  [GPT+ConceptNet](GPT+ConceptNet) |  2018 |  ZU |  No | Yes |  Yes |  87.6% | - |
+|  [GPT+GRS](GPT+GRS) |  2018 |  CMU |  No | No  |  No |  88.3% | - |
 
 
 ### <span id = "DSSM">DSSM</span>
@@ -90,7 +110,7 @@ Focus on neural network models which had been proved more powerful than classica
 
 * **Overview**
     <div align=center>
-        <img src="./images/DSSM.png" height="60%" width="60%" />
+        <img src="./images/DSSM.png" height="75%" width="75%" />
     </div>
 
 
@@ -134,7 +154,7 @@ Focus on neural network models which had been proved more powerful than classica
 
 * **Overview**
     <div align=center>
-        <img src="./images/val-NC-skip.png" height="60%" width="60%" />
+        <img src="./images/val-NC-skip.png" height="75%" width="75%" />
     </div>
 
 ### <span id = "GPT">GPT</span>
