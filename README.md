@@ -96,7 +96,7 @@ Focus on neural network models which had been proved more powerful than classica
 |  [DSSM](#DSSM) | 2013  | MSR  |  No |  Yes | No | 58.5% | -  | 
 |  [msap](#msap) |  2017 | UW  |  Yes |  Yes | No |  75.2% |   |
 |  [cogcomp](#cogcomp) |  2017 |  UI |  Yes |  Yes | No | 77.6%  | 60.8%  |
-|  [val-NC-skip](#val-NC-skip)|  2018 |  GIT |  Yes | No | No  |  76.5% |   |
+|  [val-LS-skip](#val-LS-skip)|  2018 |  GIT |  Yes | No | No  |  76.5% |   |
 |  [EndingReg](#EndingReg) | 2018  | UR | Yes  |  Yes | No | 71.5%  |  64.4% |
 |  [GPT](GPT) |  2018 |  OpenAI |  No |  No |  No |  86.5% | - |
 |  [GPT+ConceptNet](GPT+ConceptNet) |  2018 |  ZU |  No | Yes |  Yes |  87.6% | - |
@@ -123,16 +123,12 @@ Focus on neural network models which had been proved more powerful than classica
 
 * Add the linguistic features of only the ending sentences. These ending “style” features include sentence length as well as word and character n-gram in each candidate ending (independent of story).
 
-
-
 ### <span id = "cogcomp">cogcomp</span>
-***Org: University of Illinois.***
+**Story Comprehension for Predicting What Happens Next.** *Snigdha Chaturvedi, Haoruo Peng, Dan Roth.* In EMNLP, 2017. ***Org: University of Illinois.*** [ [pdf](http://aclweb.org/anthology/D17-1168) ]
 
 * Implement details: linear classification system that measures a story’s coherence based on the sequence of events, emotional trajectory, and plot consistency. 
 
 * This model takes into account frame-based and sentiment-based language modeling probabilities as well as a topical consistency score.
-
-* What a pity. There are no paper published.
 
 ### <span id = "EndingReg">EndingReg</span>
 **Tackling the Story Ending Biases in The Story Cloze Test.** *Rishi Sharma, James F. Allen, Omid Bakhshandeh, Nasrin Mostafazadeh.* In ACL, 2018. ***Org: University of Rochester.*** [ [pdf](http://www.aclweb.org/anthology/W/W17/W17-0907.pdf) ]
@@ -147,8 +143,8 @@ Focus on neural network models which had been proved more powerful than classica
 
 * To overcome the biases from endings in SCTv1.0, this work uses more features than cogcomp.
 
-### <span id = "val-NC-skip">val-NC-skip</span>
-**A Simple and Effective Approach to the Story Cloze Test.** *Siddarth Srinivasan, Richa Arora, Mark Riedl, Georgia Institute of Technology.* In NAACL, 2018. [ [pdf](https://arxiv.org/pdf/1803.05547.pdf) ]
+### <span id = "val-LS-skip">val-LS-skip</span>
+**A Simple and Effective Approach to the Story Cloze Test.** *Siddarth Srinivasan, Richa Arora, Mark Riedl.* In NAACL, 2018. ***Org: Georgia Institute of Technology.***[ [pdf](https://arxiv.org/pdf/1803.05547.pdf) ]
 
 * Present a simpler fully-neural approach to the Story Cloze Test using skip-thought embeddings of the stories in a feed-forward network.
 
@@ -156,7 +152,7 @@ Focus on neural network models which had been proved more powerful than classica
 
 * **Overview**
     <div align=center>
-        <img src="./images/val-NC-skip.png" height="75%" width="75%" />
+        <img src="./images/val-LS-skip.png" height="75%" width="75%" />
     </div>
 
 ### <span id = "GPT">GPT</span>
