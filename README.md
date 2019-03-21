@@ -133,7 +133,7 @@ Focus on neural network models which had been proved more powerful than classica
 ### <span id = "EndingReg">EndingReg</span>
 **Tackling the Story Ending Biases in The Story Cloze Test.** *Rishi Sharma, James F. Allen, Omid Bakhshandeh, Nasrin Mostafazadeh.* In ACL, 2018. ***Org: University of Rochester.*** [ [pdf](http://www.aclweb.org/anthology/W/W17/W17-0907.pdf) ]
 
-* Implement details: for each sentence, it created the following features:
+* Implement details: for each ending, it created the following features from the whole five-sentence story:
     1. Number of tokens
     2. VADER composite sentiment score 
     3. Yngve complexity score
@@ -141,7 +141,9 @@ Focus on neural network models which had been proved more powerful than classica
     4. POS n-grams
     5. Four length character-grams
 
-* To overcome the biases from endings in SCTv1.0, this work uses more features than cogcomp.
+* It aims to find out the most biased features.
+
+* To overcome the biases from endings in SCTv1.0, this work built new SCTv1.5 dataset which focused on N-grams features. It makes the SCT task more difficult to some degree.
 
 ### <span id = "val-LS-skip">val-LS-skip</span>
 **A Simple and Effective Approach to the Story Cloze Test.** *Siddarth Srinivasan, Richa Arora, Mark Riedl.* In NAACL, 2018. ***Org: Georgia Institute of Technology.*** [ [pdf](https://arxiv.org/pdf/1803.05547.pdf) ]
