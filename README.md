@@ -96,8 +96,8 @@ Focus on neural network models which had been proved more powerful than classica
 |  [DSSM](#DSSM) | 2013  | MSR  |  No |  Yes | No | 58.5% | -  | 
 |  [msap](#msap) |  2017 | UW  |  Yes |  Yes | No |  75.2% |   |
 |  [cogcomp](#cogcomp) |  2017 |  UI |  Yes |  Yes | No | 77.6%  | 60.8%  |
-|  [val-LS-skip](#val-LS-skip)|  2018 |  GIT |  Yes | No | No  |  76.5% |   |
 |  [EndingReg](#EndingReg) | 2018  | UR | Yes  |  Yes | No | 71.5%  |  64.4% |
+|  [val-LS-skip](#val-LS-skip)|  2018 |  GIT |  No | No | No  |  76.5% |   |
 |  [GPT](GPT) |  2018 |  OpenAI |  No |  No |  No |  86.5% | - |
 |  [GPT+ConceptNet](GPT+ConceptNet) |  2018 |  ZU |  No | Yes |  Yes |  87.6% | - |
 |  [GPT+GRS](GPT+GRS) |  2018 |  CMU |  No | No  |  No |  88.3% | - |
@@ -144,7 +144,7 @@ Focus on neural network models which had been proved more powerful than classica
 * To overcome the biases from endings in SCTv1.0, this work uses more features than cogcomp.
 
 ### <span id = "val-LS-skip">val-LS-skip</span>
-**A Simple and Effective Approach to the Story Cloze Test.** *Siddarth Srinivasan, Richa Arora, Mark Riedl.* In NAACL, 2018. ***Org: Georgia Institute of Technology.***[ [pdf](https://arxiv.org/pdf/1803.05547.pdf) ]
+**A Simple and Effective Approach to the Story Cloze Test.** *Siddarth Srinivasan, Richa Arora, Mark Riedl.* In NAACL, 2018. ***Org: Georgia Institute of Technology.*** [ [pdf](https://arxiv.org/pdf/1803.05547.pdf) ]
 
 * Present a simpler fully-neural approach to the Story Cloze Test using skip-thought embeddings of the stories in a feed-forward network.
 
