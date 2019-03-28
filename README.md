@@ -6,7 +6,7 @@ Contributed by Yuqiang Xie, National Engineering Laboratory for Information Secu
 
 ## Introduction
 
-Firstly, Mostafazadeh et al. (2016) proposed ROCStories dataset, which is a collection of crowd-sourced complete five sentence stories through Amazon MTurk. With a theme, each Story follows a character through a fairly simple series of events to a conclusion. We usually call the first four sentences 'plot', and the last one 'ending'. The prompt to the crowd-sourcing is the following points:
+Firstly, Mostafazadeh et al. (2016) proposed ROCStories dataset, which is a collection of crowd-sourced complete five sentence stories through Amazon MTurk. With a theme, each Story follows a character through a fairly simple series of events to a conclusion. We usually call the first four sentences 'plot', and the last one 'ending'. To some degree, it can be an unlabeled source with no negative sample. The prompt to the crowd-sourcing is the following points:
 
 **The prompt of ROCStories**
 
@@ -25,7 +25,7 @@ The below pic is some examples from ROCStories crowd-sourcing:
 
 There are three main tasks about ROCStories: *1, story cloze test (SCT); 2, story generation; 3, knowledge extraction and narrative structure learning.* We focus on the first one and will research on the next two. 
 
-Based on ROCStories, Mostafazadeh et al. (2016) also introduced **SCT** evaluation framework and built development set and test set to address the lack of evaluation framework and datasets on which story comprehension model can be trained and tested. Dev set and test set were crowd-sourced by producing two related endings for the plot. In other words, every plot has two endings, and label is the index of the more appropriate ending.
+Based on ROCStories, Mostafazadeh et al. (2016) also introduced **SCT** evaluation framework and built development set and test set to address the lack of evaluation framework and datasets on which story comprehension model can be trained and tested. The motivation is that model is trained on ROCStories and evaluated on SCT. Dev set and test set were crowd-sourced by producing two related endings for the plot. In other words, every plot has two endings, and label is the index of the more appropriate ending. Model must choose the correct ending to the story **which is trained by ROCStories**.
 
 **The prompt of SCTv1.0**
 
