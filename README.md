@@ -6,7 +6,7 @@ Contributed by Yuqiang Xie, National Engineering Laboratory for Information Secu
 
 ## Introduction
 
-Firstly, Mostafazadeh et al. (2016) proposed ROCStories dataset, which is a collection of crowd-sourced complete five sentence stories through Amazon MTurk. With a theme, each Story follows a character through a fairly simple series of events to a conclusion. We usually call the first four sentences 'plot', and the last one 'ending'. To some degree, it can be an unlabeled source with no negative sample. The prompt to the crowd-sourcing is the following points:
+Firstly, Mostafazadeh et al. (2016) proposed ROCStories dataset, which is a collection of crowd-sourced complete five sentence stories through Amazon MTurk. With a theme, each Story follows a character through a fairly simple series of events to a conclusion. We usually call the first four sentences 'plot', and the last one 'ending'. To some degree, it can be seen as an unlabeled source with no negative sample. The prompt to the crowd-sourcing is the following points:
 
 **The prompt of ROCStories**
 
