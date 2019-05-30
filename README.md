@@ -1,12 +1,14 @@
-# ROCStories and Story-Cloze-Test(SCT) Analysis
+# Analysis of Story-Cloze-Test(SCT) and ROCStories
 
-Analysis on ROCStories and related SCT task with its history, developments and future works. We focus on the crowd-sourcing details, previous frameworks and unsolved problems.
+Analysis of SCT challenge and ROCStories with their histories, developments and future works. We focus on the crowd-sourcing details, previous frameworks and unsolved problems.
 
 Contributed by Yuqiang Xie, National Engineering Laboratory for Information Security Technologies, IIE, CAS.
 
 ## Introduction
 
-Firstly, Mostafazadeh et al. (2016) proposed ROCStories dataset, which is a collection of crowd-sourced complete five sentence stories through Amazon MTurk. With a theme, each story follows a character through a fairly simple series of events to a conclusion. We usually call the first four sentences 'plot', and the last one 'ending'. To some degree, it can be seen as an unlabeled source with no negative sample. The prompt to the crowd-sourcing is the following points:
+To evaluate a story comprehension system, Mostafazadeh et al. (2017) introduced the **Story Cloze Test (SCT)** where the system is given a four-sentence story plot (or context) and two alternative endings. Each ending is labeled by *right ending* and *wrong ending*. The objective of the system is to choose the right ending for a story. Mostafazadeh et al. (2017) also provided the **ROCStories** dataset which is a large-scale but unlabeled dataset as the training set. ROCStories is a collection of crowd-sourced completed ﬁve-sentence stories through Amazon Mechanical Turk (MTurk) workers. To some degree, it can be seen as an unlabeled source with no negative sample. Each story in ROCStories follows a character through a sequence of events to a conclusion. Originally, the system can be trained on ROCStories and evaluated on the validation and testing sets given by SCT challenge.
+
+The prompt to the crowd-sourcing of ROCStories is as followings:
 
 **The prompt of ROCStories**
 
@@ -25,7 +27,7 @@ The below pic is some examples from ROCStories crowd-sourcing:
 
 There are three main tasks about ROCStories: *1, story cloze test (SCT); 2, story generation; 3, knowledge extraction and narrative structure learning.* We focus on the first one and will research on the next two. 
 
-Based on ROCStories, Mostafazadeh et al. (2016) also introduced **SCT** evaluation framework and built development set and test set to address the lack of evaluation framework and datasets on which story comprehension model can be trained and tested. The motivation is that model is trained on ROCStories and evaluated on SCT. Dev set and test set were crowd-sourced by producing two related endings for the plot. In other words, every plot has two endings, and label is the index of the more appropriate ending. Model must choose the correct ending to the story **which is trained by ROCStories**.
+Mostafazadeh et al. (2016) also introduced **SCT** evaluation framework and built development set and test set to address the lack of evaluation framework and datasets on which story comprehension model can be trained and tested. The motivation is that model is trained on ROCStories and evaluated on SCT. Dev set and test set were crowd-sourced by producing two related endings for the plot. In other words, every plot has two endings, and label is the index of the more appropriate ending. Model must choose the correct ending to the story **which is trained by ROCStories**.
 
 **The prompt of SCTv1.0**
 
