@@ -6,11 +6,13 @@ Contributed by Yuqiang Xie, National Engineering Laboratory for Information Secu
 
 ## Introduction
 
-To evaluate a story comprehension system, Mostafazadeh et al. (2017) introduced the **Story Cloze Test (SCT)** where the system is given a four-sentence story plot (or context) and two alternative endings. Each ending is labeled by *right ending* and *wrong ending*. The objective of the system is to choose the right ending for a story. Mostafazadeh et al. (2017) also provided the **ROCStories** dataset which is a large-scale but unlabeled dataset as the training set. ROCStories is a collection of crowd-sourced completed ﬁve-sentence stories through Amazon Mechanical Turk (MTurk) workers. To some degree, it can be seen as an unlabeled source with no negative sample. Each story in ROCStories follows a character through a sequence of events to a conclusion. Originally, the system can be trained on ROCStories and evaluated on the validation and testing sets given by SCT challenge.
+To evaluate a story comprehension system, Mostafazadeh et al. (2017) introduced the **Story Cloze Test (SCT)** where the system is given a four-sentence story plot (or context) and two alternative endings. Each ending is labeled by *right ending* and *wrong ending*. The objective of the system is to choose the right ending for a story. 
 
-The prompt to the crowd-sourcing of ROCStories is as followings:
+Mostafazadeh et al. (2017) also provided the **ROCStories** dataset which is a large-scale but unlabeled dataset as the training set. ROCStories is a collection of crowd-sourced completed ﬁve-sentence stories through Amazon Mechanical Turk (MTurk) workers. To some degree, it can be seen as an unlabeled source for SCT with no negative sample. Each story in ROCStories follows a character through a sequence of events to a conclusion. 
 
-**The prompt of ROCStories**
+Originally, the system can be trained on ROCStories and evaluated on the validation and testing sets given by SCT challenge. The prompt to the crowd-sourcing of ROCStories is as followings:
+
+### The prompt of ROCStories
 
 Imagine that you want to tell a five-sentence story to your friend. It can be about something that happened, something you or someone else has experienced in the past, or simply any life story about someone or something. Your task is to write this five-sentence story. Your should have all of the following five properties:
 * Your story should be entirely realistic;
@@ -29,7 +31,7 @@ There are three main tasks about ROCStories: *1, story cloze test (SCT); 2, stor
 
 Mostafazadeh et al. (2016) introduced **SCT** evaluation framework and built development set and test set to address the lack of evaluation framework and datasets on which story comprehension model can be trained and tested. The motivation is that model is trained on ROCStories and evaluated on SCT. Dev set and test set were crowd-sourced by producing two related endings for the plot. In other words, every plot has two endings, and label is the index of the more appropriate ending. Model must choose the correct ending to the story **which is trained by ROCStories**.
 
-**The prompt of SCTv1.0**
+### The prompt of SCTv1.0
 
 You are given a sequence of four sentences, which together form a coherent four-sentence story. Your task is to write the fifth sentence which is an ending to the story in two ways:
 * 'right ending': that naturally ends the story in a coherent and meaningful way.
@@ -50,7 +52,7 @@ The below pic is some examples from SCTv1.0 crowd-sourcing:
 
 Recently, many works proposed a problem: SCTv1.0 may be an easier task than identifying whether a given ending is coherent or not. Also, they (Cai et al. 2017; Srinivasan et al. 2018) got roughly the same accuracy by only using the endings to do a binary classification. Maybe, the prompt of SCTv1.0 has some problems. To address this issue, Sharma et al. proposed SCTv1.5 which have the following new characters to shed human-authorship biases:
 
-**The prompt of SCTv1.5**
+### The prompt of SCTv1.5
 
 * The new endings ['right' or 'wrong'] should
     * contain a similar number of tokens;
@@ -81,9 +83,9 @@ The below is some examples from SCTv1.5 dev set:
 With the development on SCTv1.5, we can see the biases in the endings would be reduced to some degree. The following is the analysis on standard deviation of the word and character n-gram counts, as well as the part of speech (POS) counts, between the right and wrong endings:
 
 
-|Version| N-gram | Char n-gram  | POS | 
-| :---: | :---: | :---: | :-----: | 
-|SCTv1.0| 13.9   | 12.4   |    16.4 |   
+|Version| N-gram | Char n-gram  | POS |
+| :---: | :---: | :---: | :-----: |
+|SCTv1.0| 13.9   | 12.4   |    16.4 |
 |SCTv1.5| 7.0 | 6.3 |7.5|
 
 
@@ -93,9 +95,9 @@ Focus on neural network models which had been proved more powerful than classica
 
 ### Comparison
 
-|Model| Time | Org. | Feature| ROCStories |Commonsense|SCTv1.0 | SCTv1.5 | 
+|Model| Time | Org. | Feature| ROCStories |Commonsense|SCTv1.0 | SCTv1.5 |
 | :--- | :---: | :------ | :-----: | :-----: | :-----: | :-----: |:-----: |
-|  [DSSM](#DSSM) | 2013  | MSR  |  No |  Yes | No | 58.5% | -  | 
+|  [DSSM](#DSSM) | 2013  | MSR  |  No |  Yes | No | 58.5% | -  |
 |  [msap](#msap) |  2017 | UW  |  Yes |  Yes | No |  75.2% |   |
 |  [cogcomp](#cogcomp) |  2017 |  UI |  Yes |  Yes | No | 77.6%  | 60.8%  |
 |  [EndingReg](#EndingReg) | 2018  | UR | Yes  |  Yes | No | 71.5%  |  64.4% |
